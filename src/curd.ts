@@ -159,7 +159,7 @@ async function display() {
     }
 
 }
-display()
+// display()
 
 //  set all the gender as the male 
 async function updateTheUserValue(){
@@ -180,3 +180,17 @@ async function updateTheUserValue(){
 
 // updateTheUserValue()
 
+// delete all the user where the gender is male -> all the genders is male 
+
+async function deleteUsers() {
+    
+    try {
+        const query =  `DELETE FROM users WHERE gender='male'`
+        const result = await pool.query(query)
+        console.log(result)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+deleteUsers()
