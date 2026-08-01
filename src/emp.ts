@@ -158,4 +158,26 @@ async function fecthingTheUsingOperators(){
     }
 }
 
-fecthingTheUsingOperators()
+// fecthingTheUsingOperators()
+
+// logical operators
+
+async function fecthingTheUsingLogicalOperators() {
+    
+    try {
+        // const result = await pool.query(`SELECT * from employees where (salary > 40000) AND (department = 'Sales')` )
+        // const result = await pool.query(`SELECT * from employees where (salary > 40000) OR (department = 'Sales')` )
+        // const result = await pool.query(`SELECT * from employees where department NOT IN ('Sales' ,'HR')` )
+        // const result = await pool.query(`SELECT * from employees where department IN ('Sales' ,'HR')` )
+        const result = await pool.query(`SELECT * from employees where  salary BETWEEN 40000 AND 60000` )
+     console.log(result.rows)
+
+    } catch (error) {
+
+        console.log(error)
+        
+    }
+
+}
+
+fecthingTheUsingLogicalOperators()
