@@ -202,4 +202,19 @@ async function aggregateFunctions() {
         
     }
 }
-aggregateFunctions()
+// aggregateFunctions()
+
+// groupBy is used to put matching data into small buckets or groups
+async function groupBy(){
+
+    try {
+        const result = await pool.query(`SELECT department ,AVG(salary) FROM employees GROUP BY department`)
+        console.log(result.rows)
+
+    } catch (error) {
+        console.log(error)
+    }
+
+} 
+
+groupBy()
