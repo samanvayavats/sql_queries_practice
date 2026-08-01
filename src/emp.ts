@@ -135,5 +135,27 @@ async function printTheData(){
         console.log(error)
     }
 }
-printTheData()
+// printTheData()
 
+
+// operators
+async function fecthingTheUsingOperators(){
+
+    try {
+        // const result = await pool.query(`SELECT * from employees where salary > 40000`)
+        // const result = await pool.query(`SELECT * from employees where salary < 40000`)
+        // const result = await pool.query(`SELECT * from employees where salary >= 45000.00000`)
+        // const result = await pool.query(`SELECT * from employees where salary <= 40000`)
+        // const result = await pool.query(`SELECT * from employees where salary != 32000.00000`)
+        const result = await pool.query(`SELECT * from employees where salary = 32000.00000`)
+
+        console.log(result.rows)
+
+    } catch (error) {
+
+        console.log(error)
+        
+    }
+}
+
+fecthingTheUsingOperators()
