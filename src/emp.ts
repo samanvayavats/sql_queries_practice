@@ -180,4 +180,26 @@ async function fecthingTheUsingLogicalOperators() {
 
 }
 
-fecthingTheUsingLogicalOperators()
+// fecthingTheUsingLogicalOperators()
+
+
+// aggregateFunctions
+async function aggregateFunctions() {
+    
+    try {
+
+        // const result = await pool.query(`SELECT COUNT(name) from employees ` )
+        // const result = await pool.query(`SELECT AVG(salary) from employees ` )
+        // const result = await pool.query(`SELECT MIN(salary) from employees ` )
+        // const result = await pool.query(`SELECT MAX(salary) from employees ` )
+        const result = await pool.query(`SELECT SUM(salary) from employees ` )
+
+     console.log(result.rows)
+
+    } catch (error) {
+
+        console.log(error)
+        
+    }
+}
+aggregateFunctions()
