@@ -1,0 +1,1 @@
+// mostof the used string functions
