@@ -1,8 +1,6 @@
-// EXERCISE-ONE
-
 import { pool } from "./db.js"
 
-
+// EXERCISE-ONE
 async function exericseOne() {
     try {
         // 1: Find Different type of departments in database?
@@ -32,16 +30,37 @@ async function exericseOne() {
 
 // exericseOne()
 
+// EXERCISE-TWO
+
+async function exericseTwo() {
+    try {
+        // 1: Find Total no. of employees in database?
+        // const query = `SELECT COUNT(name) as NumberOfEmployees FROM employees`
+        
+        // 2: Find no. of employees in each department.
+        // const query = `SELECT department , COUNT(name) FROM employees GROUP BY department`
+        
+        // 3: Find highest salary paying
+        // const query = `SELECT MAX(salary) as maximumSalary FROM employees`
+        
+        // 4: Find lowest salary paying
+        // const query = `SELECT MIN(salary) as maximumSalary FROM employees`
+
+        // 5: Find total salary paying in sales department?
+        // const query = `SELECT SUM(salary) AS totalSalary FROM employees WHERE department='Sales'`
+        
+        // 6.Average salary paying in each department
+        const query = `SELECT department , AVG(salary) FROM employees GROUP BY department`
+        
+        const result = await pool.query(query)
+        console.log(result.rows)
+
+    } catch (error) {
+        
+        console.log(error)
+
+    }
+}
+exericseTwo()
 
 
-// 1: Find Total no. of employees in database?
-
-// 2: Find no. of employees in each department.
-
-// 3: Find lowest salary paying
-
-// 4: Find highest salary paying
-
-// 5: Find total salary paying in Loan department?
-
-// 6: Average salary paying in each department
