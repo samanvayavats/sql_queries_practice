@@ -61,10 +61,12 @@ async function displayData(){
 try {
     
         const query = `
-          SELECT  c.cust_name ,o.cust_Id ,o.order_Id ,o.order_Date , i.order_items_id , i.quanity , i.prod_Id , p.prod_name , p.prod_price FROM Customers c 
-          INNER JOIN ON Orders o c.cust_Id = o.cust_Id
-          INNER JOIN ON Order_items i i.order_Id = o.order_Id
-          INNER JOIN ON Products p p.prod_Id = i.prod_Id
+          SELECT  c.cust_name ,o.cust_Id ,o.order_Id ,o.order_Date , i.order_items_id , i.quanity , i.prod_Id , p.prod_name , p.prod_price ,
+          (i.quanity * p.prod_price) as total_price
+          FROM Customers c 
+          INNER JOIN  Orders o ON  c.cust_Id = o.cust_Id
+          INNER JOIN  Order_items i ON  i.order_Id = o.order_Id
+          INNER JOIN  Products  p ON p.prod_Id = i.prod_Id
         `
 
         const result = await pool.query(query);
